@@ -119,7 +119,7 @@ md"""
 With a little algebra we can work out the null clines from $(1)$ as:
 
 $null(I)\Rightarrow\beta P^{*2}+(\beta (I-1)+\gamma I)P^* -rI=0$
-$null(P)\Rightarrow I=\frac{(1-\alpha)r}{\gamma}$
+$null(P)\Rightarrow I^*=\frac{(1-\alpha)r}{\gamma}$
 
 
 """
