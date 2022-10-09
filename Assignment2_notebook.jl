@@ -140,7 +140,7 @@ $b := \beta(\frac{(1-\alpha)r}{\gamma}-1)+(1-\alpha)r \quad\&\quad c:=\frac{r^2(
 
 # ╔═╡ 90f80c57-472b-4568-a824-558390ec1d4e
 md"""
-We can observe from this a saddle node bifurcation occurring along $b^2=4\beta c$ as a result of the square root. i.e. $\beta=\gamma\approx0.03145$
+We can observe from this a saddle node bifurcation occurring along $b^2=4\beta c$ as a result of the square root. i.e. $\beta=\gamma\approx0.03145$ ignoring the negative solution as it is nonsensical in this context.
 """
 
 # ╔═╡ 8c9a3605-2ea8-4191-989e-0111bfcc67ee
