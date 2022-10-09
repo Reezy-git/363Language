@@ -67,7 +67,7 @@ In this model we make a few assumptions. Firstly, our overall population, $\,N\,
 # ╔═╡ f7f1dd51-90bf-43c7-bcf4-4eda4ad85adf
 md"""
 $(LocalResource("/home/reezy/Julia Code/Dynamical Systems/Assignment2/SCM.png"))
-`Figure 1 - The SCM represented as a digraph`
+`Figure 1 - The SCM represented as a digraph.`
 """
 
 # ╔═╡ 6083dfe7-6ff4-4d9c-9c60-25bbcdb6f294
@@ -151,7 +151,7 @@ A useful visualisation of the model is to construct streamplot (vector field) of
 # ╔═╡ 0c027549-25d7-4c89-b67d-81d070817870
 md"""
 $(LocalResource("/home/reezy/Julia Code/Dynamical Systems/Assignment2/Language_streamplots.png"))
-`Figure 2 - Vector field of the ODE system with various parameter levels (NOT phase portraits)`
+`Figure 2 - Vector field of the ODE system with various parameter levels (NOT phase portraits) We see in 2.1 only one fixed point exists at the origin. In 2.2 and 2.3 two additional fixed points exist a saddle and a stable node.`
 """
 # figure 2, 3-panels of different alphas
 
@@ -163,20 +163,20 @@ Looking at these streamplots we can observe that for $\beta=\gamma=0.03$ (figure
 # ╔═╡ e35369e7-61f6-4c13-b560-7edb5527bcff
 md"""
 $(LocalResource("/home/reezy/Julia Code/Dynamical Systems/Assignment2/plot_3_Lang_ODEsystems.svg"))
-`Figure 3 - The behaviour of the language acquisition model at various acquistion rates`
+`Figure 3 - The behaviour of the language acquisition model at various acquistion rates. 3.1 shows the decline of the language toward extinction. 3.2 shows at the initial condition provided we are to stay at the saddle node. 3.3 the system is on a trajectory toward a stable node at P≈0.7`
 """
 
 # Figure 3, 3 panels showing the longterm outcome with different parameters.
 
 # ╔═╡ 85beab86-d7f7-438a-833f-c313d6f70c97
 md"""
-For the parameter values of $\alpha=\beta=0.03,\;\alpha=0.47\;r=\frac{1}{80}$ we can see what will happen if $(B,I,P)=(0,\;0,\;1)$ over a few thousand years see figure 4. This reflects what has happened as a result of colonialism. However, in the past 160ish years the decline from 100% usage of te reo Maori among the Māori population has been more dramatic than observed in the system. Reducing to just 10.6% proficient users at this time.
+For the parameter values of $\alpha=\beta=0.03,\;\alpha=0.47\;r=\frac{1}{80}$ we can see what will happen if $(B,I,P)=(0,\;0,\;1)$ over a few thousand years see figure 4. This reflects what has happened as a result of colonialism. However, in the past 100-odd years the decline from 100% usage of te reo Maori among the Māori population has been more dramatic than observed in the system. Reducing to just 10.6% proficient users at this time.
 """
 
 # ╔═╡ 1fb62b82-0bb5-4dbc-a0b6-979d6302cbb2
 md"""
 $(LocalResource("/home/reezy/Julia Code/Dynamical Systems/Assignment2/plot_10_03LRs_P0_1.svg"))
-`Figure 4 - The behaviour of the language acquisition model at β=γ=0.03 with initial condition (B,I,P)=(0, 0, 1)`
+`Figure 4 - The behaviour of the language acquisition model at β=γ=0.03 with initial condition (B,I,P)=(0, 0, 1). The death of the language`
 """
 
 # ╔═╡ c393f7ad-3e64-45f0-b75f-1e80f636f739
@@ -195,7 +195,7 @@ Consistent with Barrett-Walker [4] this assignment predicts that in the current 
 
 # ╔═╡ b9c97675-3fc7-4e80-842d-46ec37510486
 md"""
-Without intervention we expect te reo Māori to continue to decline if the learning rates are in fact $\beta=\gamma\approx0.03$ we expect very little change if $\beta=\gamma\approx0.039$ and growth up to a point of $P\approx0.7$ if the acquisition rates are $\beta=\gamma\approx0.05$. Factors that can affect these rates are reported to be: language immersion programs, age of learners [11,12] among others. So if te reo Māori is to be preserved a wider availability of immersion programs such as schooling and the targeting of young children are likely to help.
+Without intervention we expect te reo Māori to continue to decline if the learning rates are in fact $\beta=\gamma\approx0.03$ we expect very little change if $\beta=\gamma\approx0.039$ and growth up to a point of $P\approx0.7$ if the acquisition rates are $\beta=\gamma\approx0.05$. Factors that can affect these rates are reported to be: language immersion programs, age of learners [11,12] among others. So if te reo Māori is to be preserved strategies along the lines of increasing availability of immersion programs such as schooling and the targeting of young children are likely to help. In order for a language to survive there needs to exist a non-zero fixed point and as we have seen this existence is reliant on the language's learning rates.
 """
 
 # ╔═╡ a480eee4-1a76-4763-8b70-b1a9bf6839ce
