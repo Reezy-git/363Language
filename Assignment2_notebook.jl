@@ -4,7 +4,7 @@
 using Markdown
 using InteractiveUtils
 
-# ╔═╡ 91691e20-8489-4a22-976d-8810bf8e2aaf
+# ╔═╡ bd5cc7a8-be2f-44dc-b3b6-1a07356a547b
 using PlutoUI
 
 # ╔═╡ 578dc500-3ecd-11ed-2c21-33a943d62abb
@@ -20,67 +20,68 @@ md"""
 
 `Student ID`: 11139318
 
-All programming is done in Julia and the code will be available at: 
+All programming is done in Julia and the code and full size images will be available at: 
 
 `http://github.com/Reezy-git/363Language`
 """
 
 # ╔═╡ 6dc760cf-aade-4b19-b863-a693790ba2bf
 md"""
-### Abstract *(2 Marks)*
+### Abstract 
 
-Around the world there are many languages listed as endangered in particular in New Zealand the use of te reo Maori (macron) has seen a significant decline since colonisation and settlement of Europeans. There are a number of reasons why language diversity is considered important such as the language-culture link and enhanced social development [2,9] as such the preservation of existing languages such as te reo Maori (macron) should take precedence.
+Around the world there are many languages listed as endangered in particular in New Zealand the use of te reo Māori has seen a significant decline since colonisation and settlement of Europeans. There are a number of reasons why language diversity is considered important such as the language-culture link and enhanced social development [2,9] as such the preservation of existing languages such as te reo Māori should take precedence.
 
-This assignment explores through mathematical modeling the rates at which language death and revival can occur. With the goal of finding whether or not a language will become extinct or flourish in the long term and the required system parameters for these to occur. We use bifurcation analysis of our proposed ODE systems to achieve this.
+This assignment explores through mathematical modeling the rates at which language death and revival can occur. With the goal of finding whether or not a language will become extinct or flourish in the long term and the required system parameters for this to occur. We use bifurcation analysis of our proposed ODE systems to achieve this.
 
-There exists a level for each language based on the learning and acquisition rates for above which it will be self sustaining and reach a fixed point at which it is used and below which it will reach the fixed point related to extinction. Similarly there exists a set of learning rates for above the threshold given a non-zero starting population of speakers will lead to self sustained growth of a language until the fixed point at which it is used and below which it will reach the fixed point related to extinction.
+There exists a level for each language based on the learning and acquisition rates for above which it will be self sustaining and reach a fixed point at which it is used and below which it will reach the fixed point related to extinction. Similarly, there exists a set of learning rates above the threshold given a non-zero starting population of speakers will lead to self sustained growth of a language to the fixed point at which it is used and below which it will reach the fixed point related to extinction.
 
 ###### Policy Implications
 
-When a language is on the trajectory towards extinction additional support to alter the language acquisition rates in the short term may be enough to push the trajectory toward a stable existent future. Once the population reaches it's critical threshold language acquisition is predicted to be self-sustaining therefore the support for revitalisation required is finite. 
+When a language is on the trajectory towards extinction additional support to alter the language acquisition rates in the short term may be enough to push the trajectory toward a stable existent future. Once the population reaches it's critical threshold language acquisition is predicted to be self-sustaining therefore the support for revitalisation required is finite. Unless the long term acquisition rates are too low in which case no remedy short of improving these will see a result differing from extinction.
 """
 
 # ╔═╡ 4e348f5b-e364-4e9e-b787-5704810f6ad2
 md"""
-### Introduction *(3 Marks)*
+### Introduction 
 
-With approximately 7000 languagues currently spoken around the world [1] and the present prediciton that 50-90% of these will be extinct by 2100 [8]. We stand to preserve significant ammount of language and therefore cultural diversity [2] by protecting the already existent 7000 languages. In order to effectively preserve language diversity we must understand the forces in play and explore potential critical tipping points (in this case we look at bifurcations) within the system. It is hypothesised that once a certain percentage of the population reaches proficency in the language the revitalisation will become self sustaining resulting in a thriving language and subsequently culture. 
+With approximately 7000 languages currently spoken around the world [1] and the present prediction that 50-90% of these will be extinct by 2100 [8]. We stand to preserve a significant amount of language and therefore cultural diversity [2] by protecting the already existing 7000 languages. In order to effectively preserve language diversity, we must understand the forces in play and explore potential critical tipping points (in this case we look at bifurcations) within the system. It is hypothesised that once a certain percentage of the population reaches proficiency in the language the revitalisation will become self sustaining resulting in a thriving language and subsequently culture. 
 """
 
 # ╔═╡ 264651b9-ace7-4656-b4d9-29313e8b0af8
 md"""
-As with anything there are different levels of mastery within language acquisition. The Common European Framework of Reference for Languages suggests 3 broad levels of language mastery: Basic, Independent and Proficient [6]. As such we will break our population into 3 sub populations in relation to their language mastery levels and describe the transition rates between them similar to Barrett-Walker [4]. The model we use is not one of Lokta-Volterra style competition where one language is competing for dominance as is discussed by Baggs [7] instead considering languages to be non-predatory in nature. We find that the trajectory of a language is either toward extinction or that of a non-zero-use steady state and is entirely dependent on the initial conditions.
+As with anything there are different levels of mastery within language acquisition. The Common European Framework of Reference for Languages suggests 3 broad levels of language mastery: Basic, Independent and Proficient [6]. As such, we will break our population into 3 sub populations in relation to their language mastery levels and describe the transition rates between them similar to Barrett-Walker [4]. The model we use is not one of Lokta-Volterra style competition where one language is competing for dominance, as is discussed by Baggs [7] instead considering languages to be non-predatory in nature. We find that the trajectory of a language is either toward extinction or that of a non-zero-use steady state and is entirely dependent on the initial conditions.
 """
 
 # ╔═╡ 324a816e-487a-46d7-8d06-4c6d69e62991
 md"""
-We find that for te reo Maori with the estimated learning rates in this assignment we would require population of Proficients to be of approximately xx% in order for te reo to reach the non-zero fixed point. In 2013 we had a proficient population of merely 10.6% [4] and so if te reo Maori is to survive long term there needs to be in inrease of proficient users of xfold.
+We find that for te reo Māori with the estimated learning rates in this assignment, we would expect that even with a population of 100% proficiency the language would die. In 2013 we had a proficient population of merely 10.6% [4] and so if te reo Māori is to survive long term, there needs to be an inrease of the learning rates. No other factor will change the long term outcome, $\beta=\gamma=0.03$ is simply too low for the language to survive.
 """
 
 # ╔═╡ a3249ec7-c613-4ba0-b640-77f3ad81237f
 md"""
-### Model *(5 Marks)*
+### Model 
 
-In this model we make a few assumptions. Firstly our overall population, $\,N\,$ is static, i.e. birth rates are equal to death rates and total population $\,N=1\,$ this allows us to view the different proficiency levels are a percentage of the total population. We also assume that individuals move from the basic category to the independednt to the proficient category without the ability to lose proficiency or skip a category. Below in figure 1 we see the proposed structural causal model (SCM) for the language acquisition.
+In this model we make a few assumptions. Firstly, our overall population, $\,N\,$ is static, i.e. birth rates are equal to death rates and total population $\,N=1\,$ this allows us to view the different proficiency levels are a percentage of the total population. We also assume that individuals move from the basic category to the independednt to the proficient category without the ability to lose proficiency or skip a category. Below in figure 1 we see the proposed structural causal model (SCM) for the language acquisition.
 """
 
 # ╔═╡ f7f1dd51-90bf-43c7-bcf4-4eda4ad85adf
 md"""
-$(LocalResource("C:\Users\aerod\OneDrive\Documents\Julia Code\Dynamical Systems\Assignment resources\\SCM.png"))
+$(LocalResource("/home/reezy/Julia Code/Dynamical Systems/Assignment2/SCM.png"))
+`Figure 1 - The SCM represented as a digraph`
 """
 
 # ╔═╡ 6083dfe7-6ff4-4d9c-9c60-25bbcdb6f294
 md"""
 We therefore can construct the following models:
 
-For the Basic users we observe the rate of change is driven by births at a rate of $\,r\,$ where all offspring of basic and independent users are assumed to be basic users, and a certain percentage of proficient users babys are proficient leaving the remainder in the basic category. Basic users can transition to independent users at a learning rate of $\,\beta\,$ dependent on the population of basic and proficent users $\,B\,\&\,P\,$ and finally the basic population suffers a death rate of $\,r\,$ this gives:
+For the Basic users, we observe the rate of change is driven by births at a rate of $\,r\,$ where all offspring of basic and independent users are assumed to be basic users, and a certain percentage of proficient users baby's are proficient leaving the remainder in the basic category. Basic users can transition to independent users at a learning rate of $\,\beta\,$ dependent on the population of basic and proficient users $\,B\,\&\,P\,$ and finally the basic population suffers a death rate of $\,r\,$ this gives:
 
 $\frac{dB}{dt}=r(B+I+(1-\alpha)P)-\beta BP-rB$
 """
 
 # ╔═╡ c971b4ee-17b7-4d6c-9a7c-12df5111f4d1
 md"""
-The change in independent users are driven by the transition from basic to independent $\,\beta BP\,$ the transition rate from independent to proficient $\,\gamma IP\,$ and of course the death rate. This gives:
+The change in independent users is driven by the transition from basic to independent $\,\beta BP\,$ the transition rate from independent to proficient $\,\gamma IP\,$ and of course the death rate. This gives:
 
 $\frac{dI}{dt}=\beta IP - \gamma IP -rI$
 """
@@ -106,14 +107,14 @@ For the simplicity of the model we will assume that $\gamma=\beta$ that is to sa
 
 # ╔═╡ c82773ae-b017-42f3-b24c-3b096619b16e
 md"""
-Since we have fixed our population size to $N=1$ we can observe that $B=1-I-P$ and as such we can reduce our model to the follwing two equations with the remaining population falling into category $B.$ I like cats.
+Since we have fixed our population size to $N=1$ we can observe that $B=1-I-P$ and as such we can reduce our model to the following two equations with the remaining population falling into category $B$.
 
 $\quad\quad\quad\;\;\;\frac{dP}{dt}=r\alpha P +\gamma IP-rP\quad,\quad\frac{dI}{dt}= \beta(1-P-I)P-\gamma IP -rI\quad\quad\quad(1)$
 """
 
 # ╔═╡ 845f5f3f-6a88-431c-992f-f8246831a2a9
 md"""
-### Results *(4 Marks)*
+### Results 
 
 With a little algebra we can work out the null clines from $(1)$ as:
 
@@ -139,41 +140,62 @@ $b := \beta(\frac{(1-\alpha)r}{\gamma}-1)+(1-\alpha)r \quad\&\quad c:=\frac{r^2(
 
 # ╔═╡ 90f80c57-472b-4568-a824-558390ec1d4e
 md"""
-We can observe from this a saddle node bifurcation occuring along $b^2=4\beta c$ as a result of the square root.
+We can observe from this a saddle node bifurcation occurring along $b^2=4\beta c$ as a result of the square root. i.e. $\beta=\gamma\approx0.03145$
 """
 
 # ╔═╡ 8c9a3605-2ea8-4191-989e-0111bfcc67ee
 md"""
-A useful visualisation of the model is to construct streamplot (vector field) of the system with a few perterbations of the parameters.  In this case we will observe the perterbation of $\alpha$ the intergenerational transmission rate see figure 2.
+A useful visualisation of the model is to construct streamplot (vector field) of the system with a few perturbations of the parameters.  In this case we will observe the perturbation of $\beta=\gamma$ the acquisition rates see figure 2.
 """
 
 # ╔═╡ 0c027549-25d7-4c89-b67d-81d070817870
+md"""
+$(LocalResource("/home/reezy/Julia Code/Dynamical Systems/Assignment2/Language_streamplots.png"))
+`Figure 2 - Vector field of the ODE system with various parameter levels (NOT phase portraits)`
+"""
 # figure 2, 3-panels of different alphas
 
 # ╔═╡ 82a6b834-67bf-45bd-aab4-ffc767d39a44
 md"""
-Looking at these streamplots we can apply our initial conditions $(B,I,P)=	(77.4,\;12.0,\;10.6)$ obtained from [4] for te reo Maori to these parameters see figure 3.
+Looking at these streamplots we can observe that for $\beta=\gamma=0.03$ (figure 2.1) there is only one stable fixed point at the origin. But once we increase our acquisition rates a new stable fixed point occurs off the origin and a saddle node point occurs between them. Applying our initial conditions $(B,I,P)=	(.774,\;.120,\;.106)$ obtained from [4] for te reo Maori to these parameters we can observe the predicted outcomes for various learning rates see figure 3.
 """
 
 # ╔═╡ e35369e7-61f6-4c13-b560-7edb5527bcff
+md"""
+$(LocalResource("/home/reezy/Julia Code/Dynamical Systems/Assignment2/plot_3_Lang_ODEsystems.svg"))
+`Figure 3 - The behaviour of the language acquisition model at various acquistion rates`
+"""
+
 # Figure 3, 3 panels showing the longterm outcome with different parameters.
+
+# ╔═╡ 85beab86-d7f7-438a-833f-c313d6f70c97
+md"""
+For the parameter values of $\alpha=\beta=0.03,\;\alpha=0.47\;r=\frac{1}{80}$ we can see what will happen if $(B,I,P)=(0,\;0,\;1)$ over a few thousand years see figure 4. This reflects what has happened as a result of colonialism. However, in the past 160ish years the decline from 100% usage of te reo Maori among the Māori population has been more dramatic than observed in the system. Reducing to just 10.6% proficient users at this time.
+"""
+
+# ╔═╡ 1fb62b82-0bb5-4dbc-a0b6-979d6302cbb2
+md"""
+$(LocalResource("/home/reezy/Julia Code/Dynamical Systems/Assignment2/plot_10_03LRs_P0_1.svg"))
+`Figure 4 - The behaviour of the language acquisition model at β=γ=0.03 with initial condition (B,I,P)=(0, 0, 1)`
+"""
 
 # ╔═╡ c393f7ad-3e64-45f0-b75f-1e80f636f739
 md"""
-### Discussion *(3 Marks)*
+### Discussion 
 
-We tested the hypothesis that once a certain percentage of the population reaches proficency in the language the revitalisation will become self sustaining resulting in a thriving language and culture. Although one should notice that the previous statement fails to account for learning and intergenerational preservation rates, one should also note that in the long term these are essentially fixed by the attitudes of the community. Therefore if a stable point for the language exists where there is a present population of speakers we need only to influence the rates for a finite period to reach a condition where the system will draw itself to such a fixed point. On the other hand if the parameters of the system are such that there is no stable fixed point off the origin the language is doomed to extinction. Therefore the attitude of the target community for the endangered language needs to be the target of any revitalisation scheme in order to get the acquisition rates to increase. If this is not done expect the language to continue declining as it did in the past.
+We tested the hypothesis that once a certain percentage of the population reaches proficiency in the language the revitalisation will become self sustaining resulting in a thriving language and culture. Although one should notice that the previous statement fails to account for learning and intergenerational preservation rates, one should also note that in the long term these are essentially fixed by the attitudes of the community. Therefore, if a stable point for the language exists where there is a present population of speakers we need only to influence the rates for a finite period to reach a condition where the system will draw itself to such a fixed point. On the other hand, if the parameters of the system are such that there is no stable fixed point off the origin the language is doomed to extinction. Therefore the attitude of the target community for the endangered language needs to be the target of any revitalisation scheme in order to get the acquisition rates to increase. If this is not done expect the language to continue declining as it did in the past. Figure 4 demonstrates the effect of a low learning rate by demonstrating that even with 100% proficiency initial condition a language can and will still die off.
 
 
 """
 
 # ╔═╡ fe4b8ed1-1e8a-4787-8c46-5b288a244778
 md"""
-*link to existing research*
+Consistent with Barrett-Walker [4] this assignment predicts that in the current observed state te reo Māori will continue to decline to extinction. Assuming the 50-90% of existent languages predicted to see extinction in the next hundred years [8] are similar in nature serious grass roots community work needs to be done to alter the learning and acquisition rates for their target populations. Research by Bauer [10] suggests an even more dramatic drop in language usage than is observed in figure 4. Therefore one might suggest that the acquisition rates proposed by Barret-Walker [4] could be too optimistic, at least for the past 100 years since we can read from figure 4. that at 2013 there should have been ~60% Proficients however the data suggests $P=10.6\%$.
+"""
 
-Consistent with Barrett-Walker [4] this assignment predicts that in the current observed state te reo Maori will continue to decline to extinction. Assuming the 50-90% of existent languages predicted to see extinction in the next hundred years [8] are similar in nature serious grass roots community work needs to be done to alter the learning and acquisition rates for their target populations.
-
-*reitterate key finding*
+# ╔═╡ b9c97675-3fc7-4e80-842d-46ec37510486
+md"""
+Without intervention we expect te reo Māori to continue to decline if the learning rates are in fact $\beta=\gamma\approx0.03$ we expect very little change if $\beta=\gamma\approx0.039$ and growth up to a point of $P\approx0.7$ if the acquisition rates are $\beta=\gamma\approx0.05$. Factors that can affect these rates are reported to be: language immersion programs, age of learners [11,12] among others. So if te reo Māori is to be preserved a wider availability of immersion programs such as schooling and the targeting of young children are likely to help.
 """
 
 # ╔═╡ a480eee4-1a76-4763-8b70-b1a9bf6839ce
@@ -204,6 +226,27 @@ md"""
 
 
 9. Fan, S. P., Liberman, Z., Keysar, B., & Kinzler, K. D. (2015). The exposure advantage: Early exposure to a multilingual environment promotes effective communication. Psychological Science, 26(7), 1090-1097.
+
+10. Bauer, W. (2008). Is the Health of Te Reo Māori Improving? Te Reo, 51, 33-73.
+
+11. Pearson, B. Z. (2007). Social factors in childhood bilingualism in the United States. Applied psycholinguistics, 28(3), 399-410.
+
+
+12. Hartshorne, J. K., Tenenbaum, J. B., & Pinker, S. (2018). A critical period for second language acquisition: Evidence from 2/3 million English speakers. Cognition, 177, 263-277.
+
+
+13. Christ, S., Schwabeneder, D., Rackauckas, C., Borregaard, M. K., & Breloff, T. (2022). Plots.jl -- a user extendable plotting API for the julia programming language.
+
+
+14. Rackauckas, C., & Nie, Q. (2017). DifferentialEquations.jl – A performant and feature-rich ecosystem for solving differential equations in julia. Journal of Open Research Software, 5(1), 15.
+
+
+15. Danisch, S., & Krumbiegel, J. (2021). Makie.jl: Flexible high-performance data visualization for julia. Journal of Open Source Software, 6(65), 3349.
+"""
+
+# ╔═╡ 7a4efee1-e513-4fba-82d1-359c9fd46b40
+md"""
+
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
@@ -432,13 +475,13 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 
 # ╔═╡ Cell order:
 # ╟─578dc500-3ecd-11ed-2c21-33a943d62abb
-# ╠═91691e20-8489-4a22-976d-8810bf8e2aaf
+# ╠═bd5cc7a8-be2f-44dc-b3b6-1a07356a547b
 # ╟─6dc760cf-aade-4b19-b863-a693790ba2bf
 # ╟─4e348f5b-e364-4e9e-b787-5704810f6ad2
 # ╟─264651b9-ace7-4656-b4d9-29313e8b0af8
 # ╟─324a816e-487a-46d7-8d06-4c6d69e62991
 # ╟─a3249ec7-c613-4ba0-b640-77f3ad81237f
-# ╠═f7f1dd51-90bf-43c7-bcf4-4eda4ad85adf
+# ╟─f7f1dd51-90bf-43c7-bcf4-4eda4ad85adf
 # ╟─6083dfe7-6ff4-4d9c-9c60-25bbcdb6f294
 # ╟─c971b4ee-17b7-4d6c-9a7c-12df5111f4d1
 # ╟─df142ec3-cac5-4434-84b4-e67c117eb967
@@ -450,11 +493,15 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╟─c9e85660-159f-431a-9519-ea8c18bc3b90
 # ╟─90f80c57-472b-4568-a824-558390ec1d4e
 # ╟─8c9a3605-2ea8-4191-989e-0111bfcc67ee
-# ╠═0c027549-25d7-4c89-b67d-81d070817870
+# ╟─0c027549-25d7-4c89-b67d-81d070817870
 # ╟─82a6b834-67bf-45bd-aab4-ffc767d39a44
-# ╠═e35369e7-61f6-4c13-b560-7edb5527bcff
+# ╟─e35369e7-61f6-4c13-b560-7edb5527bcff
+# ╟─85beab86-d7f7-438a-833f-c313d6f70c97
+# ╟─1fb62b82-0bb5-4dbc-a0b6-979d6302cbb2
 # ╟─c393f7ad-3e64-45f0-b75f-1e80f636f739
-# ╠═fe4b8ed1-1e8a-4787-8c46-5b288a244778
+# ╟─fe4b8ed1-1e8a-4787-8c46-5b288a244778
+# ╟─b9c97675-3fc7-4e80-842d-46ec37510486
 # ╟─a480eee4-1a76-4763-8b70-b1a9bf6839ce
+# ╟─7a4efee1-e513-4fba-82d1-359c9fd46b40
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
